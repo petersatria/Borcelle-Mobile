@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "petersatria",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "role": "Admin",
+      "phoneNumber": "0831253255",
+      "address": "Yogyakarta"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Calamari Fried Ring",
+      "description": "With Sauce Saigon",
+      "price": 53000,
+      "imgUrl": "https://img.freepik.com/free-photo/fried-rings-with-sweet-chili_140725-3764.jpg?w=900&t=st=1686550870~exp=1686551470~hmac=a89ae163a49ca35706fc39b20b013a6bee722235b08de81f99d82970a4ad2190",
+      "userId": 1,
+      "categoryId": 1,
+      "createdAt": "2023-06-12T06:17:43.794Z",
+      "updatedAt": "2023-06-12T06:17:43.794Z"
+    },
+    {
+      "id": 2,
+      "name": "Cheesy Garlic Bread",
+      "description": "Home-made Bread with Cheese and Special Recipe",
+      "price": 38000,
+      "imgUrl": "https://img.freepik.com/free-photo/top-view-plate-with-slices-bread-olive-oil_23-2148258726.jpg?w=740&t=st=1686553962~exp=1686554562~hmac=0004df3cb9b6ee0eeb227eed65895e50816b79debf0f1d38e1ae8657a38d6140",
+      "userId": 1,
+      "categoryId": 1,
+      "createdAt": "2023-06-12T06:17:43.794Z",
+      "updatedAt": "2023-06-12T06:17:43.794Z"
+    },
+    {
+      "id": 3,
+      "name": "Lamb Shank Tajine with Prunes",
+      "description": "Served with Braised Vegetables, Couscous and Harissa Sambal",
+      "price": 150000,
+      "imgUrl": "https://img.freepik.com/premium-photo/grilled-lamb-chops-steaks-wooden-tray_89816-20710.jpg?w=826",
+      "userId": 1,
+      "categoryId": 2,
+      "createdAt": "2023-06-12T06:17:43.794Z",
+      "updatedAt": "2023-06-12T06:17:43.794Z"
+    },
+    {
+      "name": "Beef Tenderloin On The Grill (AUS)",
+      "description": " Fresh Cut French Fries, Bok Coy\n and Kailan Wok (200 gr) ",
+      "price": "185000",
+      "imgUrl": "https://img.freepik.com/free-photo/close-up-grilled-steak-served-with-roasted-potato_140725-4981.jpg?w=1800&t=st=1686588170~exp=1686588770~hmac=fa264e8b9e77587eecc0abed40cdb4c58f3f9c202ebf95b6db8a3d9b0752ff80",
+      "userId": 1,
+      "categoryId": "2",
+      "createdAt": "2023-06-12T16:38:42.311Z",
+      "updatedAt": "2023-06-12T16:38:42.311Z",
+      "id": 4
+    },
+    {
+      "name": "test zz",
+      "description": "test",
+      "price": 222,
+      "imgUrl": "test",
+      "userId": 1,
+      "categoryId": 1,
+      "createdAt": "2023-06-13T16:13:28.870Z",
+      "updatedAt": "2023-06-13T16:13:28.870Z",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Snack"
+    },
+    {
+      "id": 2,
+      "name": "Main Course"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "itemId": 1,
+      "name": "Calamari"
+    },
+    {
+      "id": 2,
+      "itemId": 1,
+      "name": "Sauce"
+    },
+    {
+      "id": 3,
+      "itemId": 2,
+      "name": "Bread"
+    },
+    {
+      "id": 4,
+      "itemId": 2,
+      "name": "Cheese"
+    },
+    {
+      "id": 5,
+      "itemId": 3,
+      "name": "Lamb"
+    },
+    {
+      "id": 6,
+      "itemId": 3,
+      "name": "Prunes"
+    },
+    {
+      "name": "Tenderloin",
+      "itemId": 4,
+      "id": 7
+    },
+    {
+      "name": "Potato",
+      "itemId": 4,
+      "id": 8
+    },
+    {
+      "name": "Kalian",
+      "itemId": 4,
+      "id": 9
+    },
+    {
+      "name": "Bok Coy",
+      "itemId": 4,
+      "id": 10
+    },
+    {
+      "name": "test 123",
+      "itemId": 5,
+      "id": 11
+    }
+  ]
+}
