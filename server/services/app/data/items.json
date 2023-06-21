@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Calamari Fried Ring",
+    "description": "With Sauce Saigon",
+    "price": 53000,
+    "imgUrl": "https://img.freepik.com/free-photo/fried-rings-with-sweet-chili_140725-3764.jpg?w=900&t=st=1686550870~exp=1686551470~hmac=a89ae163a49ca35706fc39b20b013a6bee722235b08de81f99d82970a4ad2190",
+    "authorId": 1,
+    "categoryId": 1
+  },
+  {
+    "name": "Cheesy Garlic Bread",
+    "description": "Home-made Bread with Cheese and Special Recipe",
+    "price": 38000,
+    "imgUrl": "https://img.freepik.com/free-photo/top-view-plate-with-slices-bread-olive-oil_23-2148258726.jpg?w=740&t=st=1686553962~exp=1686554562~hmac=0004df3cb9b6ee0eeb227eed65895e50816b79debf0f1d38e1ae8657a38d6140",
+    "authorId": 1,
+    "categoryId": 1
+  },
+  {
+    "name": "Lamb Shank Tajine with Prunes",
+    "description": "Served with Braised Vegetables, Couscous and Harissa Sambal",
+    "price": 150000,
+    "imgUrl": "https://img.freepik.com/premium-photo/grilled-lamb-chops-steaks-wooden-tray_89816-20710.jpg?w=826",
+    "authorId": 1,
+    "categoryId": 2
+  },
+  {
+    "name": "Beef Tenderloin On The Grill (AUS)",
+    "description": " Fresh Cut French Fries, Bok Coy\n and Kailan Wok (200 gr) ",
+    "price": "185000",
+    "imgUrl": "https://img.freepik.com/free-photo/close-up-grilled-steak-served-with-roasted-potato_140725-4981.jpg?w=1800&t=st=1686588170~exp=1686588770~hmac=fa264e8b9e77587eecc0abed40cdb4c58f3f9c202ebf95b6db8a3d9b0752ff80",
+    "authorId": 1,
+    "categoryId": 2
+  }
+]
