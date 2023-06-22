@@ -32,18 +32,24 @@ class Controller {
     try {
       const _id = new ObjectId(req.params.id)
       const { db } = MongoDBConnection
-      const data = await db.collection('users').findOne({ _id })
+      const data = await db.collection('users').findOne({ _id }, { projection: { password: 0 } })
       if (!data) throw { name: 'NotFound' }
       res.status(200).json({ message: 'Success get data', data })
     } catch (err) {
+      console.log(err);
       next(err)
     }
   }
-  static async DeleteUser(req, res) {
+  static async DeleteUser(req, res, next) {
     try {
+      const _id = new ObjectId(req.params.id)
+      const { db } = MongoDBConnection
 
+      let deleted = await db.collection('users').deleteOne({ _id })
+      if (!deleted.deletedCount) throw { name: 'NotFound' }
+      res.status(200).json({ message: 'Success delete data', deletedId: _id })
     } catch (err) {
-
+      next(err)
     }
   }
 }

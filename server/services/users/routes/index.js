@@ -7,7 +7,7 @@ router
   .post('/register', Controller.CreateUser)
   .get('/users', Controller.FindAllUser)
   .get('/users/:id', Controller.FindOneUser)
-  .delete('/users', Controller.DeleteUser)
+  .delete('/users/:id', Controller.DeleteUser)
   .use(errorHandler)
 
 module.exports = router

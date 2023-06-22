@@ -4,7 +4,7 @@ class MongoDBConnection {
   static db = false
   static async connect() {
     let mongoClient;
-    let uri = process.env.DB_URI
+    let uri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/'
     try {
       mongoClient = new MongoClient(uri);
       console.log('Connecting to MongoDB Atlas cluster...');
