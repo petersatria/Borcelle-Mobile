@@ -3,7 +3,7 @@ const MongoDBConnection = require('../config/connection');
 const { hashPassword } = require("../helpers/helper");
 
 class Controller {
-  static async CreateUser(req, res, next) {
+  static async createUser(req, res, next) {
     try {
       let { username, email, password, phoneNumber, address } = req.body
       if (!email || !password) throw { name: 'EmailPasswordEmpty' }
@@ -19,7 +19,7 @@ class Controller {
       next(err)
     }
   }
-  static async FindAllUser(req, res, next) {
+  static async findAllUser(req, res, next) {
     try {
       const { db } = MongoDBConnection
       const data = await db.collection('users').find().project({ password: 0 }).toArray()
@@ -28,7 +28,7 @@ class Controller {
       next(err)
     }
   }
-  static async FindOneUser(req, res, next) {
+  static async findOneUser(req, res, next) {
     try {
       const _id = new ObjectId(req.params.id)
       const { db } = MongoDBConnection
@@ -36,11 +36,10 @@ class Controller {
       if (!data) throw { name: 'NotFound' }
       res.status(200).json({ message: 'Success get data', data })
     } catch (err) {
-      console.log(err);
       next(err)
     }
   }
-  static async DeleteUser(req, res, next) {
+  static async deleteUser(req, res, next) {
     try {
       const _id = new ObjectId(req.params.id)
       const { db } = MongoDBConnection
