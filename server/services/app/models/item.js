@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Item.belongsTo(models.User, { foreignKey: 'authorId' })
+      // Item.belongsTo(models.User, { foreignKey: 'authorId' })
       Item.belongsTo(models.Category, { foreignKey: 'categoryId' })
       Item.hasMany(models.Ingredient, { foreignKey: 'itemId' })
     }
@@ -126,15 +126,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     authorId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: 'Author id is required'
-        },
-        notEmpty: {
-          msg: 'Author id is required'
-        }
-      }
+      // allowNull: false,
+      // validate: {
+      //   notNull: {
+      //     msg: 'Author id is required'
+      //   },
+      //   notEmpty: {
+      //     msg: 'Author id is required'
+      //   }
+      // }
     },
     categoryId: {
       type: DataTypes.INTEGER,
@@ -148,6 +148,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    userMongoId: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Item',

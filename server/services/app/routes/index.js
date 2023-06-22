@@ -11,7 +11,7 @@ router
   .get('/items/:id', Controller.findOneItem)
   .get('/categories', Controller.findAllICategories)
   .get('/categories/:id', Controller.findOneCategory)
-  .use(authentication)
+  // .use(authentication)
   .post('/register', AdminController.registerAdmin)
   .post('/items', AdminController.createItem)
   .put('/items/:id', AdminController.updateItem)

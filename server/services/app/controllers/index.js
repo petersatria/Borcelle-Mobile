@@ -11,10 +11,11 @@ class Controller {
           model: Ingredient,
           attributes: { exclude: ['createdAt', 'updatedAt'] }
         },
-        {
-          model: User,
-          attributes: ['username', 'email']
-        }],
+          // {
+          //   model: User,
+          //   attributes: ['username', 'email']
+          // }
+        ],
         order: [['updatedAt', 'DESC']]
       })
       res.status(200).json({ message: 'Success get data', data })
