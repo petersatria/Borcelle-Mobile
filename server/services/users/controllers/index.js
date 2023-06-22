@@ -39,11 +39,17 @@ class Controller {
       next(err)
     }
   }
-  static async DeleteUser(req, res) {
+  static async DeleteUser(req, res, next) {
     try {
+      const _id = new ObjectId(req.params.id)
+      const { db } = MongoDBConnection
+      const data = await db.collection('users').findOne({ _id })
+      if (!data) throw { name: 'NotFound' }
 
+      await db.collection('users').deleteOne({ _id })
+      res.status(200).json({ message: 'Success delete data', deletedId: _id })
     } catch (err) {
-
+      next(err)
     }
   }
 }
