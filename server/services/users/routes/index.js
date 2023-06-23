@@ -4,7 +4,7 @@ const errorHandler = require("../middleware/errorHandler")
 const router = require('express').Router()
 
 router
-  .post('/register', Controller.createUser)
+  .post('/users', Controller.createUser)
   .get('/users', Controller.findAllUser)
   .get('/users/:id', Controller.findOneUser)
   .delete('/users/:id', Controller.deleteUser)
