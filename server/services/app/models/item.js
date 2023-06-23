@@ -16,13 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async createItem(req, res, next) {
+      console.log(req.body, 'aaa');
       const t = await sequelize.transaction();
 
       try {
-        const { id: authorId } = req.user
-        const { name, description, price, imgUrl, categoryId, ingredients } = req.body
+        // const { id: authorId } = req.user
+        const { name, description, price, imgUrl, categoryId, ingredients, userMongoId } = req.body
         const data = await Item.create({
-          name, description, price, imgUrl, authorId, categoryId, ingredients
+          name, description, price, imgUrl, categoryId, ingredients, userMongoId
         }, { transaction: t })
         if (ingredients?.length < 2) throw { name: 'IngredientsRequired' }
         const ingredientsData = ingredients.map(e => {
@@ -35,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         await t.commit();
         return { data, createdIngredients }
       } catch (err) {
+        console.log(err);
         await t.rollback();
         next(err)
       }
@@ -44,11 +46,11 @@ module.exports = (sequelize, DataTypes) => {
       const t = await sequelize.transaction();
 
       try {
-        const { id: authorId } = req.user
+        // const { id: authorId } = req.user
         const { id } = req.params
-        const { name, description, price, imgUrl, categoryId, ingredients } = req.body
+        const { name, description, price, imgUrl, categoryId, ingredients, userMongoId } = req.body
         await Item.update({
-          name, description, price, imgUrl, authorId, categoryId, ingredients
+          name, description, price, imgUrl, categoryId, ingredients, userMongoId
         }, { where: { id }, transaction: t })
         if (ingredients?.length < 2) throw { name: 'IngredientsRequired' }
 
@@ -124,18 +126,18 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    authorId: {
-      type: DataTypes.INTEGER,
-      // allowNull: false,
-      // validate: {
-      //   notNull: {
-      //     msg: 'Author id is required'
-      //   },
-      //   notEmpty: {
-      //     msg: 'Author id is required'
-      //   }
-      // }
-    },
+    // authorId: {
+    // type: DataTypes.INTEGER,
+    // allowNull: false,
+    // validate: {
+    //   notNull: {
+    //     msg: 'Author id is required'
+    //   },
+    //   notEmpty: {
+    //     msg: 'Author id is required'
+    //   }
+    // }
+    // },
     categoryId: {
       type: DataTypes.INTEGER,
       allowNull: false,

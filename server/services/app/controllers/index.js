@@ -34,12 +34,14 @@ class Controller {
           model: Ingredient,
           attributes: { exclude: ['createdAt', 'updatedAt'] }
         },
-        {
-          model: User,
-          attributes: ['username', 'email']
-        }],
+          // {
+          //   model: User,
+          //   attributes: ['username', 'email']
+          // }
+        ],
         order: [['updatedAt', 'DESC']]
       })
+      if (!data) throw { name: 'NotFound' }
       res.status(200).json({ message: 'Success get data', data })
     } catch (err) {
       next(err)

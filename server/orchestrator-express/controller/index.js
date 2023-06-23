@@ -60,7 +60,8 @@ class Controller {
       }
       res.status(200).json(response)
     } catch (err) {
-      console.log(err);
+      console.log(err.response);
+      res.status(err.response.status).json(err.response.data)
     }
   }
   static async findOneItem(req, res) {
