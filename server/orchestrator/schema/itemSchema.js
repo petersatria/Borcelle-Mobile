@@ -49,6 +49,7 @@ const typeDefs = `#graphql
   type Query {
     findItems: [Item]
     findItemById(id: ID!): Item
+    findCategories: [Category]
   }
 
   type Mutation {
@@ -120,6 +121,17 @@ const resolvers = {
           url: BASE_URL_USER + '/users/' + id
         })
         data.data.User = user.data
+        return data.data
+      } catch (err) {
+        throw err
+      }
+    },
+    findCategories: async () => {
+      try {
+        const { data } = await axios({
+          method: 'GET',
+          url: BASE_URL_APP + '/categories'
+        })
         return data.data
       } catch (err) {
         throw err

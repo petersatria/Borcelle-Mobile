@@ -1,5 +1,6 @@
 import { Text, View, Image } from "react-native";
 import { useQuery, gql } from "@apollo/client";
+import Loading from "../components/Loading";
 
 const GET_ITEM = gql`
   query FindItemById($itemId: ID!) {
@@ -30,7 +31,7 @@ export default function MenuScreen({ route }) {
     variables: { itemId },
   });
 
-  if (loading) return <Text>Loading...</Text>;
+  if (loading) return <Loading />;
   if (error) return <Text>Error : {error.message}</Text>;
 
   const item = data.findItemById;
@@ -60,7 +61,7 @@ export default function MenuScreen({ route }) {
           {item.Ingredients &&
             item.Ingredients.map((e, i) => {
               return (
-                <View className="m-1">
+                <View className="m-1" key={i}>
                   <Text className="text-white text-sm bg-primary-yellow p-2 rounded-sm">
                     {e.name}
                   </Text>
