@@ -9,6 +9,7 @@ const [userTypeDefs, userResolvers] = require('./schema/userSchema')
 const server = new ApolloServer({
   typeDefs: [itemTypeDefs, userTypeDefs],
   resolvers: [itemResolvers, userResolvers],
+  introspection: true
 })
 
 startStandaloneServer(server, {

@@ -1,8 +1,8 @@
 const axios = require('axios')
 const redis = require('../config/redis')
 
-const BASE_URL_APP = 'http://localhost:4002'
-const BASE_URL_USER = 'http://localhost:4001'
+const BASE_URL_APP = process.env.BASE_URL_APP || 'http://localhost:4002'
+const BASE_URL_USER = process.env.BASE_URL_USER || 'http://localhost:4001'
 
 const typeDefs = `#graphql
   type Item {

@@ -1,0 +1,27 @@
+version: "3.6"
+
+services:
+    orchestrator:
+        build: ./orchestrator
+        ports:
+            - "4000:80"
+        volumes:
+            - ./orchestrator:/usr/local/orchestrator
+        env_file:
+            - ./orchestrator/.env
+    app-service:
+        build: ./services/app
+        ports:
+            - "4002:4002"
+        volumes:
+            - ./services/app:/usr/local/app
+        env_file:
+            - ./services/app/.env
+    user-service:
+        build: ./services/users
+        ports:
+            - "4001:4001"
+        volumes:
+            - ./services/users:/usr/local/users
+        env_file:
+            - ./services/users/.env
