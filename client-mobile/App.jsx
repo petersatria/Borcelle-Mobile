@@ -8,7 +8,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 const Stack = createNativeStackNavigator();
 
 const client = new ApolloClient({
-  uri: "https://e5ce-182-2-72-223.ngrok-free.app/",
+  uri: "https://borcelle-server.petersox.online/",
   cache: new InMemoryCache(),
 });
 
